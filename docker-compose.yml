@@ -1,0 +1,18 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: techblog-frontend
+    restart: unless-stopped
+    ports:
+      - "80:5173"
+    environment:
+      VITE_API_URL: http://host.docker.internal:5000/api
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+networks:
+  default:
+    name: techblog-frontend-network
+    driver: bridge
