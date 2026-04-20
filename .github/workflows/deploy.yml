@@ -16,17 +16,16 @@ jobs:
             - name: Deploy via SSH
               uses: appleboy/ssh-action@v1.0.3
               with:
-                host: ${{secrets.SSH_HOST}}
-                username: ${{secrets.SSH_USERNAME}}
-                key: ${{secrets.SSH_KEY}}
+                host: ${{ secrets.SSH_HOST }}
+                username: ${{ secrets.SSH_USERNAME }}
+                key: ${{ secrets.SSH_KEY }}
                 script: |
                     set -e
                     cd /root/project_x-frontend
 
-                    git remote remove origin || true
-                    git remote add origin https://github.com/Tushar-CodeSpace/project_x-frontend.git
-
-                    git fetch origin
-                    git reset --hard origin/main
-
-                    docker compose up -d --build
+                    # Pull latest code (if origin already configured)
+                    git pull origin master || git fetch origin
+                    
+                    # Rebuild and restart frontend
+                    docker compose build
+                    docker compose up -d --force-recreate
