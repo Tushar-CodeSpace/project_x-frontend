@@ -23,8 +23,15 @@ jobs:
                     set -e
                     cd /root/project_x-frontend
 
-                    # Pull latest code (if origin already configured)
-                    git pull origin master || git fetch origin
+                    # Check if git repo exists, if not clone it
+                    if [ ! -d ".git" ]; then
+                        echo "Cloning repository..."
+                        git clone https://github.com/Tushar-CodeSpace/project_x-frontend .
+                    fi
+                    
+                    # Pull latest code
+                    git fetch origin
+                    git reset --hard origin/master
                     
                     # Rebuild and restart frontend
                     docker compose build
