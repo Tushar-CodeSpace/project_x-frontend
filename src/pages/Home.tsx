@@ -244,7 +244,7 @@ return (
               </p>
               <Link
                 to="/contact"
-                className="inline-block px-4 py-2 bg-[#22c55e] text-[#0a0a0a] font-mono text-sm hover:bg-[#16a34a] transition-colors"
+                className="inline-block px-4 py-2 bg-c22c55e text-cffffff font-mono text-sm hover:bg-c16a34a transition-colors"
               >
                 ./run_contact.sh
               </Link>
