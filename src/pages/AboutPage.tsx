@@ -1,23 +1,29 @@
 import { motion } from 'framer-motion';
-import { GitBranch, Mail, MapPin, Calendar } from 'lucide-react';
+import { GitBranch, Mail, MapPin } from 'lucide-react';
 
 const skills = [
-  'React', 'TypeScript', 'Node.js', 'Python', 'Docker', 'PostgreSQL', 
-  'MongoDB', 'AWS', 'Git', 'CI/CD', 'REST APIs', 'GraphQL'
+  'Node.js', 'Express.js', 'Bun.js', 'Django', 'Docker', 'Nginx', 
+  'MongoDB', 'SQL', 'Linux', 'Git', 'CI/CD', 'Python', 'REST APIs', 'Microservices', 'PLC Integration', 'TCP Communication'
 ];
 
 const experience = [
   {
-    role: 'Full Stack Developer',
-    company: 'Tech Company',
-    period: '2022 - Present',
-    description: 'Building modern web applications and microservices.'
+    role: 'Senior DevOps Engineer',
+    company: 'Nido Machineries Pvt Ltd',
+    period: 'Sep 2024 – Present',
+    description: 'Architected and managed Docker-based deployment infrastructure for distributed logistics platform serving enterprise clients (Amazon, Flipkart, DHL, Delhivery). Built Node.js microservices for real-time data processing and parcel tracking pipelines. Designed Nginx reverse-proxy with SSL termination. Integrated backend services with PLC hardware via TCP for industrial DWS systems.'
   },
   {
-    role: 'Junior Developer',
-    company: 'Startup Inc',
-    period: '2020 - 2022',
-    description: 'Frontend development and API integrations.'
+    role: 'Automation Maintenance Executive',
+    company: 'Instakart Services Pvt Ltd (Flipkart)',
+    period: 'Sep 2021 – Aug 2024',
+    description: 'Maintained high-availability warehouse automation systems achieving 98%+ operational uptime. Developed Python and JavaScript diagnostic scripts for automated health monitoring. Cross-layer hardware-software troubleshooting on conveyor, barcode, and scanning systems.'
+  },
+  {
+    role: 'Operations Executive – Full-Stack Developer',
+    company: 'Rudra Tech Innovations',
+    period: 'Aug 2017 – Jun 2019',
+    description: 'Developed and deployed full-stack web applications using Node.js, Django, and React.js. Managed end-to-end production deployments on DigitalOcean VPS with domain configuration and SSL.'
   },
 ];
 
@@ -36,13 +42,13 @@ export function AboutPage() {
               <span className="text-5xl font-bold text-white">JD</span>
             </div>
             <div className="text-center">
-              <h1 className="text-2xl font-bold mb-2">John Doe</h1>
-              <p className="text-indigo-400 mb-4">Full Stack Developer</p>
+              <h1 className="text-2xl font-bold mb-2">Tushar Kanti Acharyya</h1>
+              <p className="text-indigo-400 mb-4">Senior DevOps & Backend Engineer</p>
               <div className="flex items-center justify-center gap-2 text-slate-400 text-sm mb-1">
-                <MapPin className="h-4 w-4" /> Location
+                <MapPin className="h-4 w-4" /> Nashik, Maharashtra, India
               </div>
               <div className="flex items-center justify-center gap-2 text-slate-400 text-sm">
-                <Calendar className="h-4 w-4" /> Available
+                <Mail className="h-4 w-4" /> +91 8777845607
               </div>
             </div>
           </div>
@@ -50,23 +56,23 @@ export function AboutPage() {
           <div className="md:col-span-2">
             <h2 className="text-3xl font-bold mb-6 font-[var(--font-display)]">About Me</h2>
             <p className="text-slate-300 text-lg mb-6">
-              I'm a full-stack developer with a passion for building modern web applications and automation solutions.
-              With experience spanning frontend and backend development, I specialize in creating efficient,
-              scalable applications.
+              Results-driven Senior DevOps & Backend Engineer with 7+ years of combined experience designing, 
+              deploying, and maintaining production-grade distributed systems. Deep hands-on expertise in 
+              Docker-based microservices, Node.js backend development, Nginx configuration, and VPS/cloud infrastructure management.
             </p>
             <p className="text-slate-400 mb-6">
-              When I'm not coding, you can find me exploring new technologies, writing blog posts about tech,
-              or contributing to open source projects. I believe in continuous learning and staying up-to-date
-              with the latest in web development.
+              Proven track record delivering high-availability solutions for enterprise logistics clients including 
+              Amazon, Flipkart, DHL, and Delhivery. Equally comfortable bridging hardware-software integration layers, 
+              with specialized experience in PLC and industrial automation systems.
             </p>
             <div className="flex gap-4">
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors">
                 <GitBranch className="h-5 w-5" /> GitHub
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors">
+              <a href="https://linkedin.com/in/acharyyatk" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors">
                 <GitBranch className="h-5 w-5" /> LinkedIn
               </a>
-              <a href="mailto:hello@example.com" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors">
+              <a href="mailto:tushar.whitecollar@gmail.com" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors">
                 <Mail className="h-5 w-5" /> Email
               </a>
             </div>

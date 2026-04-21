@@ -90,17 +90,17 @@ export function ContactPage() {
           <Card className="p-4 text-center">
             <Mail className="h-8 w-8 mx-auto mb-2 text-blue-600" />
             <p className="font-medium">Email</p>
-            <p className="text-sm text-slate-500">hello@techblog.dev</p>
+            <p className="text-sm text-slate-500">tushar.whitecollar@gmail.com</p>
           </Card>
           <Card className="p-4 text-center">
             <MessageSquare className="h-8 w-8 mx-auto mb-2 text-blue-600" />
-            <p className="font-medium">Social</p>
-            <p className="text-sm text-slate-500">@techblog</p>
+            <p className="font-medium">LinkedIn</p>
+            <p className="text-sm text-slate-500">acharyyatk</p>
           </Card>
           <Card className="p-4 text-center">
             <Mail className="h-8 w-8 mx-auto mb-2 text-blue-600" />
             <p className="font-medium">Location</p>
-            <p className="text-sm text-slate-500">Remote / Worldwide</p>
+            <p className="text-sm text-slate-500">Nashik, Maharashtra</p>
           </Card>
         </div>
       </motion.div>

@@ -46,13 +46,13 @@ return (
             </motion.div>
             
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 font-[var(--font-display)]">
-              <span className="block text-white">Full Stack</span>
-              <span className="block gradient-text">Developer</span>
+              <span className="block text-white">DevOps &</span>
+              <span className="block gradient-text">Backend Engineer</span>
             </h1>
             
             <p className="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Building modern web applications and automation solutions. 
-              Specializing in <span className="text-indigo-400">React</span>, <span className="text-indigo-400">Node.js</span>, and <span className="text-indigo-400">cloud infrastructure</span>.
+              Building production-grade distributed systems with Docker, Node.js, and cloud infrastructure.
+              Delivering high-availability solutions for enterprise logistics clients.
             </p>
             
             <motion.div
