@@ -51,7 +51,7 @@ return (
                 transition={{ delay: 0.3 }}
                 className="text-[#22c55e] mb-6"
               >
-                Tushar Kanti Acharyya - Senior DevOps & Backend Engineer
+                Tushar Kanti Acharyya
               </motion.div>
 
               <div className="mb-4">
