@@ -106,13 +106,13 @@ export function Projects() {
                 {projectCategories.map((cat) => (
                   <Button
                     key={cat.value}
-                    variant={filter === cat.value ? 'default' : 'ghost'}
                     size="sm"
                     onClick={() => setFilter(cat.value)}
-                    className={filter === cat.value 
-                      ? 'bg-[#22c55e] text-[#0a0a0a] font-mono text-xs' 
-                      : 'text-[#737373] hover:text-[#e5e5e5] font-mono text-xs'
+                    style={filter === cat.value 
+                      ? { backgroundColor: '#22c55e', color: '#ffffff', fontFamily: 'monospace' }
+                      : { color: '#737373', fontFamily: 'monospace' }
                     }
+                    className="text-xs"
                   >
                     {cat.label}
                   </Button>
@@ -145,7 +145,7 @@ export function Projects() {
                       <span className="text-[#525252] font-mono text-xs">[{i + 1}]</span>
                       <h3 className="font-mono text-sm text-[#e5e5e5]">{project.title}</h3>
                       {project.featured && (
-                        <span className="text-xs px-2 py-0.5 bg-[#22c55e]/20 text-[#22c55e]">featured</span>
+                        <span className="text-xs px-2 py-0.5 text-[#22c55e]" style={{ backgroundColor: 'rgba(34, 197, 94, 0.2)' }}>featured</span>
                       )}
                     </div>
                     <p className="text-xs text-[#737373] mb-3">{project.description}</p>
