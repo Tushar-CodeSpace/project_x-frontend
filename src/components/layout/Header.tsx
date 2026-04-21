@@ -28,7 +28,7 @@ export function Header() {
             <span className="text-sm font-mono font-bold">
               <span className="text-[#22c55e]">tushar</span>
               <span className="text-[#525252]">@</span>
-              <span className="text-[#e5e5e5]">devops</span>
+              <span className="text-[#e5e5e5]">octyn</span>
               <span className="text-[#525252]">:~$</span>
             </span>
           </Link>

@@ -118,7 +118,7 @@ return (
               </motion.div>
 
               <div className="mt-6 flex items-center gap-2">
-                <span className="text-[#22c55e]">tushar@devops</span>
+                <span className="text-[#22c55e]">tushar@octyn</span>
                 <span className="text-[#525252]">:</span>
                 <span className="text-[#60a5fa]">~</span>
                 <span className="text-[#525252]">$</span>
