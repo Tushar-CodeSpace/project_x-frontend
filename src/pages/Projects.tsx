@@ -89,17 +89,17 @@ export function Projects() {
             <div className="terminal-dot red" />
             <div className="terminal-dot yellow" />
             <div className="terminal-dot green" />
-            <span className="ml-2 text-xs text-[#525252] font-mono">projects.sh</span>
+            <span className="ml-2 text-xs text-c525252 font-mono">projects.sh</span>
           </div>
-          <div className="p-4 border-b border-[#262626]">
+          <div className="p-4 border-b border-c262626">
             <div className="flex flex-col md:flex-row gap-4">
               <div className="relative flex-1">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#525252] font-mono text-sm">$</span>
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-c525252 font-mono text-sm">$</span>
                 <Input
                   placeholder="grep projects..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  className="pl-8 font-mono text-sm bg-[#0a0a0a] border-[#262626]"
+                  className="pl-8 font-mono text-sm bg-c0a0a0a border-c262626"
                 />
               </div>
               <div className="flex gap-1 flex-wrap">
@@ -129,11 +129,11 @@ export function Projects() {
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.05 }}
-              className="terminal-window hover:border-[#22c55e] transition-colors"
+              className="terminal-window border-c262626 hover:border-c22c55e transition-colors"
             >
               <div className="p-4">
                 <div className="flex flex-col md:flex-row gap-4">
-                  <div className="w-full md:w-32 h-20 bg-[#171717] flex-shrink-0">
+                  <div className="w-full md:w-32 h-20 bg-c171717 flex-shrink-0">
                     <img 
                       src={project.thumbnail} 
                       alt={project.title}
@@ -142,28 +142,28 @@ export function Projects() {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="text-[#525252] font-mono text-xs">[{i + 1}]</span>
-                      <h3 className="font-mono text-sm text-[#e5e5e5]">{project.title}</h3>
+                      <span className="text-c525252 font-mono text-xs">[{i + 1}]</span>
+                      <h3 className="font-mono text-sm text-ce5e5e5">{project.title}</h3>
                       {project.featured && (
-                        <span className="text-xs px-2 py-0.5 text-[#22c55e]" style={{ backgroundColor: 'rgba(34, 197, 94, 0.2)' }}>featured</span>
+                        <span className="text-xs px-2 py-0.5 text-c22c55e" style={{ backgroundColor: 'rgba(34, 197, 94, 0.2)' }}>featured</span>
                       )}
                     </div>
-                    <p className="text-xs text-[#737373] mb-3">{project.description}</p>
+                    <p className="text-xs text-c737373 mb-3">{project.description}</p>
                     <div className="flex flex-wrap gap-2 mb-2">
                       {project.techStack.slice(0, 4).map((tech) => (
-                        <span key={tech} className="text-xs px-2 py-0.5 bg-[#171717] text-[#737373] font-mono">
+                        <span key={tech} className="text-xs px-2 py-0.5 bg-c171717 text-c737373 font-mono">
                           {tech}
                         </span>
                       ))}
                     </div>
                     <div className="flex gap-3">
                       {project.liveUrl && (
-                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-[#22c55e] hover:underline">
+                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-c22c55e hover:underline">
                           live demo
                         </a>
                       )}
                       {project.githubUrl && (
-                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-[#22c55e] hover:underline">
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-c22c55e hover:underline">
                           source
                         </a>
                       )}
@@ -177,11 +177,11 @@ export function Projects() {
 
         {filteredProjects.length === 0 && (
           <div className="terminal-window p-8 text-center">
-            <p className="text-[#737373] font-mono text-sm">No projects found.</p>
+            <p className="text-c737373 font-mono text-sm">No projects found.</p>
           </div>
         )}
 
-        <div className="mt-4 text-[#525252] font-mono text-xs">
+        <div className="mt-4 text-c525252 font-mono text-xs">
           {filteredProjects.length} project(s) listed
         </div>
       </motion.div>

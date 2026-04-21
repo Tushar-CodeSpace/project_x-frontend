@@ -38,61 +38,61 @@ return (
               <div className="terminal-dot red" />
               <div className="terminal-dot yellow" />
               <div className="terminal-dot green" />
-              <span className="ml-2 text-xs text-[#525252] font-mono">bash</span>
+              <span className="ml-2 text-xs text-c525252 font-mono">bash</span>
             </div>
             <div className="p-6 font-mono text-sm">
               <div className="mb-4">
-                <span className="text-[#525252]"># </span>
-                <span className="text-[#a1a1aa]">whoami</span>
+                <span className="text-c525252"># </span>
+                <span className="text-ca1a1aa">whoami</span>
               </div>
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
-                className="text-[#22c55e] mb-6"
+                className="text-c22c55e mb-6"
               >
                 Tushar Kanti Acharyya
               </motion.div>
 
               <div className="mb-4">
-                <span className="text-[#525252]"># </span>
-                <span className="text-[#a1a1aa]">cat &gt; /proc/experience</span>
+                <span className="text-c525252"># </span>
+                <span className="text-ca1a1aa">cat &gt; /proc/experience</span>
               </div>
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="text-[#22c55e] mb-6"
+                className="text-c22c55e mb-6"
               >
                 4+ years in Docker, Node.js, Nginx, VPS & Industrial Automation
               </motion.div>
 
               <div className="mb-4">
-                <span className="text-[#525252]"># </span>
-                <span className="text-[#a1a1aa]">ls /skills</span>
+                <span className="text-c525252"># </span>
+                <span className="text-ca1a1aa">ls /skills</span>
               </div>
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.7 }}
-                className="text-[#22c55e] mb-6 flex flex-wrap gap-2"
+                className="text-c22c55e mb-6 flex flex-wrap gap-2"
               >
                 {['Node.js', 'Docker', 'Nginx', 'MongoDB', 'Python', 'Linux', 'CI/CD'].map((skill) => (
-                  <span key={skill} className="px-2 py-1 bg-[#171717] border border-[#262626] text-xs">
+                  <span key={skill} className="px-2 py-1 bg-c171717 border border-c262626 text-xs">
                     {skill}
                   </span>
                 ))}
               </motion.div>
 
               <div className="mb-4">
-                <span className="text-[#525252]"># </span>
-                <span className="text-[#a1a1aa]">echo $AVAILABLE</span>
+                <span className="text-c525252"># </span>
+                <span className="text-ca1a1aa">echo $AVAILABLE</span>
               </div>
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.9 }}
-                className="text-[#22c55e] mb-6"
+                className="text-c22c55e mb-6"
               >
                 true
               </motion.div>
@@ -120,10 +120,10 @@ return (
               </motion.div>
 
               <div className="mt-6 flex items-center gap-2">
-                <span className="text-[#22c55e]">tushar@octyn</span>
-                <span className="text-[#525252]">:</span>
-                <span className="text-[#60a5fa]">~</span>
-                <span className="text-[#525252]">$</span>
+                <span className="text-c22c55e">tushar@octyn</span>
+                <span className="text-c525252">:</span>
+                <span className="text-c60a5fa">~</span>
+                <span className="text-c525252">$</span>
                 <span className="terminal-cursor" />
               </div>
             </div>
@@ -143,11 +143,11 @@ return (
               <div className="terminal-dot red" />
               <div className="terminal-dot yellow" />
               <div className="terminal-dot green" />
-              <span className="ml-2 text-xs text-[#525252] font-mono">services.sh</span>
+              <span className="ml-2 text-xs text-c525252 font-mono">services.sh</span>
             </div>
             <div className="p-6">
               <h2 className="text-xl font-mono mb-6 text-[#e5e5e5]">
-                <span className="text-[#525252]">## </span>
+                <span className="text-c525252">## </span>
                 What I Build
               </h2>
               
@@ -163,9 +163,9 @@ return (
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="p-4 border border-[#262626] hover:border-[#22c55e] transition-colors"
+                    className="p-4 border border-c262626 hover:border-c22c55e transition-colors"
                   >
-                    <item.icon className="h-6 w-6 text-[#22c55e] mb-3" />
+                    <item.icon className="h-6 w-6 text-c22c55e mb-3" />
                     <h3 className="font-mono text-sm text-[#e5e5e5] mb-2">{item.title}</h3>
                     <p className="text-xs text-[#737373]">{item.desc}</p>
                   </motion.div>
@@ -173,7 +173,7 @@ return (
               </div>
 
               <div className="mt-6">
-                <Link to="/projects" className="text-xs text-[#22c55e] hover:underline font-mono">
+                <Link to="/projects" className="text-xs text-c22c55e hover:underline font-mono">
                   $ ./list_projects.sh --all
                 </Link>
               </div>
@@ -194,15 +194,15 @@ return (
               <div className="terminal-dot red" />
               <div className="terminal-dot yellow" />
               <div className="terminal-dot green" />
-              <span className="ml-2 text-xs text-[#525252] font-mono">blog.sh</span>
+              <span className="ml-2 text-xs text-c525252 font-mono">blog.sh</span>
             </div>
             <div className="p-6">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-xl font-mono text-[#e5e5e5]">
-                  <span className="text-[#525252]">## </span>
+                  <span className="text-c525252">## </span>
                   Latest Posts
                 </h2>
-                <Link to="/blog" className="text-xs text-[#22c55e] hover:underline font-mono">
+                <Link to="/blog" className="text-xs text-c22c55e hover:underline font-mono">
                   --view-all
                 </Link>
               </div>
@@ -210,7 +210,7 @@ return (
               {loading ? (
                 <div className="space-y-3">
                   {[...Array(3)].map((_, i) => (
-                    <div key={i} className="h-16 bg-[#171717] animate-pulse" />
+                    <div key={i} className="h-16 bg-c171717 animate-pulse" />
                   ))}
                 </div>
               ) : (
@@ -233,7 +233,7 @@ return (
               <div className="terminal-dot red" />
               <div className="terminal-dot yellow" />
               <div className="terminal-dot green" />
-              <span className="ml-2 text-xs text-[#525252] font-mono">contact.sh</span>
+              <span className="ml-2 text-xs text-c525252 font-mono">contact.sh</span>
             </div>
             <div className="p-6">
               <h2 className="text-lg font-mono text-[#e5e5e5] mb-2">

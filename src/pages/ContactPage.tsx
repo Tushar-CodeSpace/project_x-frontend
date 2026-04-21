@@ -39,29 +39,29 @@ export function ContactPage() {
             <div className="terminal-dot red" />
             <div className="terminal-dot yellow" />
             <div className="terminal-dot green" />
-            <span className="ml-2 text-xs text-[#525252] font-mono">contact.sh</span>
+            <span className="ml-2 text-xs text-c525252 font-mono">contact.sh</span>
           </div>
-          <div className="p-4 border-b border-[#262626]">
-            <p className="text-xs text-[#525252] font-mono"># Send me a message</p>
+          <div className="p-4 border-b border-c262626">
+            <p className="text-xs text-c525252 font-mono"># Send me a message</p>
           </div>
           <div className="p-6">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-mono text-[#737373] mb-2">name:</label>
-                  <Input {...register('name')} placeholder="Your name" className="font-mono text-sm bg-[#0a0a0a] border-[#262626]" />
+                  <Input {...register('name')} placeholder="Your name" className="font-mono text-sm bg-[#0a0a0a] border-c262626" />
                   {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
                 </div>
                 <div>
                   <label className="block text-xs font-mono text-[#737373] mb-2">email:</label>
-                  <Input {...register('email')} type="email" placeholder="your@email.com" className="font-mono text-sm bg-[#0a0a0a] border-[#262626]" />
+                  <Input {...register('email')} type="email" placeholder="your@email.com" className="font-mono text-sm bg-[#0a0a0a] border-c262626" />
                   {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
                 </div>
               </div>
               
               <div>
                 <label className="block text-xs font-mono text-[#737373] mb-2">subject:</label>
-                <Input {...register('subject')} placeholder="What's this about?" className="font-mono text-sm bg-[#0a0a0a] border-[#262626]" />
+                <Input {...register('subject')} placeholder="What's this about?" className="font-mono text-sm bg-[#0a0a0a] border-c262626" />
                 {errors.subject && <p className="text-red-500 text-xs mt-1">{errors.subject.message}</p>}
               </div>
               
@@ -70,7 +70,7 @@ export function ContactPage() {
                 <textarea
                   {...register('message')}
                   placeholder="Your message..."
-                  className="flex w-full font-mono text-sm bg-[#0a0a0a] border border-[#262626] px-3 py-2 placeholder:text-[#525252] focus:outline-none focus:border-[#22c55e] min-h-[150px]"
+                  className="flex w-full font-mono text-sm bg-[#0a0a0a] border border-c262626 px-3 py-2 placeholder:text-c525252 focus:outline-none focus:border-c22c55e min-h-[150px]"
                 />
                 {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
               </div>
@@ -87,20 +87,20 @@ export function ContactPage() {
             <div className="terminal-dot red" />
             <div className="terminal-dot yellow" />
             <div className="terminal-dot green" />
-            <span className="ml-2 text-xs text-[#525252] font-mono">links.sh</span>
+            <span className="ml-2 text-xs text-c525252 font-mono">links.sh</span>
           </div>
           <div className="p-4">
-            <p className="text-xs text-[#525252] font-mono mb-3"># Other ways to reach me</p>
+            <p className="text-xs text-c525252 font-mono mb-3"># Other ways to reach me</p>
             <div className="space-y-2 font-mono text-sm">
               <div className="flex items-center gap-2">
                 <span className="text-[#22c55e]">email:</span>
-                <a href="mailto:tushar.codespace@gmail.com" className="text-[#e5e5e5] hover:underline">
+                <a href="mailto:tushar.codespace@gmail.com" className="text-ce5e5e5 hover:underline">
                   tushar.codespace@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-[#22c55e]">linkedin:</span>
-                <a href="https://linkedin.com/in/acharyyatk" target="_blank" rel="noopener noreferrer" className="text-[#e5e5e5] hover:underline">
+                <a href="https://linkedin.com/in/acharyyatk" target="_blank" rel="noopener noreferrer" className="text-ce5e5e5 hover:underline">
                   /in/acharyyatk
                 </a>
               </div>

@@ -27,9 +27,9 @@ export function Header() {
             </div>
             <span className="text-sm font-mono font-bold">
               <span className="text-[#22c55e]">tushar</span>
-              <span className="text-[#525252]">@</span>
-              <span className="text-[#e5e5e5]">octyn</span>
-              <span className="text-[#525252]">:~$</span>
+              <span className="text-c525252">@</span>
+              <span className="text-ce5e5e5">octyn</span>
+              <span className="text-c525252">:~$</span>
             </span>
           </Link>
 
@@ -42,7 +42,7 @@ export function Header() {
                   "relative px-3 py-1 text-sm font-mono transition-all duration-200",
                   location.pathname === link.href
                     ? "text-[#22c55e] bg-[#171717]"
-                    : "text-[#737373] hover:text-[#e5e5e5] hover:bg-[#171717]"
+                    : "text-[#737373] hover:text-ce5e5e5 hover:bg-[#171717]"
                 )}
               >
                 {link.label}
@@ -53,7 +53,7 @@ export function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden text-[#737373] hover:text-[#e5e5e5]"
+            className="md:hidden text-[#737373] hover:text-ce5e5e5"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <AnimatePresence mode="wait">
@@ -106,7 +106,7 @@ export function Header() {
                         "block px-3 py-2 text-sm font-mono transition-all",
                         location.pathname === link.href
                           ? "text-[#22c55e] bg-[#171717]"
-                          : "text-[#737373] hover:text-[#e5e5e5]"
+                          : "text-[#737373] hover:text-ce5e5e5"
                       )}
                     >
                       {link.label}
