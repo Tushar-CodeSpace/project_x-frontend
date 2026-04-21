@@ -101,7 +101,7 @@ class ApiService {
         excerpt: data.excerpt || '',
         content: data.content || '',
         coverImage: data.coverImage || '',
-        category: data.category || 'Programming',
+        category: data.category || 'tech',
         tags: data.tags || [],
         author: data.author || { id: '1', name: 'Admin', avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Admin', bio: '' },
         publishedAt: data.status === 'published' ? new Date().toISOString() : '',

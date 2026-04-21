@@ -1,3 +1,7 @@
+export type BlogCategory = 'tech' | 'automation' | 'it' | 'tutorial';
+
+export type ProjectCategory = 'web-app' | 'automation' | 'tool' | 'open-source';
+
 export interface Post {
   id: string;
   title: string;
@@ -5,7 +9,7 @@ export interface Post {
   excerpt: string;
   content: string;
   coverImage: string;
-  category: string;
+  category: BlogCategory;
   tags: string[];
   author: Author;
   publishedAt: string;
@@ -15,6 +19,21 @@ export interface Post {
   status: 'draft' | 'published';
   featured: boolean;
   views: number;
+}
+
+export interface Project {
+  id: string;
+  title: string;
+  slug: string;
+  description: string;
+  content: string;
+  thumbnail: string;
+  techStack: string[];
+  category: ProjectCategory;
+  liveUrl?: string;
+  githubUrl?: string;
+  featured: boolean;
+  createdAt: string;
 }
 
 export interface Author {

@@ -1,12 +1,10 @@
 import type { Post, Category, AnalyticsData } from '../types';
 
 export const mockCategories: Category[] = [
-  { id: '1', name: 'Docker', slug: 'docker', description: 'Containerization tutorials', postCount: 5 },
-  { id: '2', name: 'Database', slug: 'database', description: 'Database setup and optimization', postCount: 8 },
-  { id: '3', name: 'Redis', slug: 'redis', description: 'In-memory data store tutorials', postCount: 4 },
-  { id: '4', name: 'Programming', slug: 'programming', description: 'Programming language guides', postCount: 12 },
-  { id: '5', name: 'DevOps', slug: 'devops', description: 'DevOps practices and tools', postCount: 6 },
-  { id: '6', name: 'System Design', slug: 'system-design', description: 'Architecture and design patterns', postCount: 3 },
+  { id: '1', name: 'Tech', slug: 'tech', description: 'Programming and development', postCount: 12 },
+  { id: '2', name: 'Automation', slug: 'automation', description: 'Automation and scripting', postCount: 8 },
+  { id: '3', name: 'IT', slug: 'it', description: 'IT and infrastructure', postCount: 6 },
+  { id: '4', name: 'Tutorial', slug: 'tutorial', description: 'Step-by-step guides', postCount: 4 },
 ];
 
 export const mockPosts: Post[] = [
@@ -60,7 +58,7 @@ docker run -d -p 8080:80 nginx
 
 Docker makes deployment consistent across environments.`,
     coverImage: 'https://images.unsplash.com/photo-1605745341112-85968b19335b?w=800',
-    category: 'Docker',
+    category: 'automation',
     tags: ['docker', 'containers', 'devops', 'beginners'],
     author: {
       id: '1',
@@ -99,7 +97,7 @@ sudo apt-get install -y mongodb-org
 
 Enable authentication and secure your instance.`,
     coverImage: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800',
-    category: 'Database',
+    category: 'tech',
     tags: ['mongodb', 'database', 'nosql', 'production'],
     author: {
       id: '1',
@@ -131,7 +129,7 @@ Redis is an in-memory data store that can dramatically speed up your application
 - Pub/Sub capabilities
 - Clustering support`,
     coverImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800',
-    category: 'Redis',
+category: 'tech',
     tags: ['redis', 'caching', 'performance', 'database'],
     author: {
       id: '2',
@@ -156,7 +154,7 @@ Redis is an in-memory data store that can dramatically speed up your application
 
 Master advanced TypeScript concepts to write more type-safe code.`,
     coverImage: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=800',
-    category: 'Programming',
+category: 'tech',
     tags: ['typescript', 'javascript', 'programming', 'types'],
     author: {
       id: '1',
@@ -181,7 +179,7 @@ Master advanced TypeScript concepts to write more type-safe code.`,
 
 Define and run multi-container applications with ease.`,
     coverImage: 'https://images.unsplash.com/photo-1605745341112-85968b19335b?w=800',
-    category: 'Docker',
+    category: 'automation',
     tags: ['docker', 'docker-compose', 'containers', 'devops'],
     author: {
       id: '2',
@@ -206,7 +204,7 @@ Define and run multi-container applications with ease.`,
 
 Choosing the right database is crucial for your application success.`,
     coverImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800',
-    category: 'Database',
+    category: 'tech',
     tags: ['postgresql', 'mongodb', 'database', 'comparison'],
     author: {
       id: '1',
@@ -258,8 +256,8 @@ export const mockAnalytics: AnalyticsData = {
     { source: 'Reddit', count: 800 },
   ],
   categoryDistribution: [
-    { category: 'Docker', count: 25 },
-    { category: 'Database', count: 30 },
+    { category: 'automation', count: 25 },
+    { category: 'tech', count: 30 },
     { category: 'Redis', count: 15 },
     { category: 'Programming', count: 40 },
     { category: 'DevOps', count: 20 },
