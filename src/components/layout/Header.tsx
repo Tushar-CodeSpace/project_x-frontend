@@ -1,38 +1,35 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Moon, Sun, Menu, X, Terminal } from 'lucide-react';
+import { Menu, X, Terminal } from 'lucide-react';
 import { Button } from '../ui/button';
-import { useTheme } from '../../hooks/useTheme';
 import { useState } from 'react';
 import { cn } from '../../lib/utils';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/', label: '> home' },
+  { href: '/projects', label: '> projects' },
+  { href: '/blog', label: '> blog' },
+  { href: '/about', label: '> about' },
+  { href: '/contact', label: '> contact' },
 ];
 
 export function Header() {
-  const { theme, toggleTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50">
-      <div className="absolute inset-0 glass border-b border-white/5" />
-      <div className="relative container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl blur opacity-50 group-hover:opacity-75 transition-opacity" />
-              <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600">
-                <Terminal className="h-5 w-5 text-white" />
-              </div>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/80 backdrop-blur-sm border-b border-[#262626]">
+      <div className="container mx-auto px-4">
+        <div className="flex h-14 items-center justify-between">
+          <Link to="/" className="flex items-center gap-2 group">
+            <div className="flex items-center justify-center">
+              <Terminal className="h-5 w-5 text-[#22c55e]" />
             </div>
-            <span className="text-xl font-bold font-[var(--font-display)] gradient-text">
-              DevFolio
+            <span className="text-sm font-mono font-bold">
+              <span className="text-[#22c55e]">tushar</span>
+              <span className="text-[#525252]">@</span>
+              <span className="text-[#e5e5e5]">devops</span>
+              <span className="text-[#525252]">:~$</span>
             </span>
           </Link>
 
@@ -42,94 +39,47 @@ export function Header() {
                 key={link.href}
                 to={link.href}
                 className={cn(
-                  "relative px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300",
+                  "relative px-3 py-1 text-sm font-mono transition-all duration-200",
                   location.pathname === link.href
-                    ? "text-white"
-                    : "text-slate-400 hover:text-white"
+                    ? "text-[#22c55e] bg-[#171717]"
+                    : "text-[#737373] hover:text-[#e5e5e5] hover:bg-[#171717]"
                 )}
               >
-                {location.pathname === link.href && (
-                  <motion.div
-                    layoutId="nav-pill"
-                    className="absolute inset-0 bg-white/10 rounded-lg border border-white/10"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                  />
-                )}
-                <span className="relative z-10">{link.label}</span>
+                {link.label}
               </Link>
             ))}
           </nav>
 
-          <div className="flex items-center gap-2">
-            <Link to="/admin">
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                className="hidden sm:flex text-slate-400 hover:text-white hover:bg-white/5"
-              >
-                Dashboard
-              </Button>
-            </Link>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-              className="relative text-slate-400 hover:text-white hover:bg-white/5"
-            >
-              <motion.div
-                initial={false}
-                animate={{ 
-                  rotate: theme === 'dark' ? 0 : 180,
-                  scale: theme === 'dark' ? 1 : 0
-                }}
-                transition={{ duration: 0.3 }}
-                className="absolute"
-              >
-                <Moon className="h-5 w-5" />
-              </motion.div>
-              <motion.div
-                initial={false}
-                animate={{ 
-                  rotate: theme === 'dark' ? -180 : 0,
-                  scale: theme === 'dark' ? 0 : 1
-                }}
-                transition={{ duration: 0.3 }}
-                className="absolute"
-              >
-                <Sun className="h-5 w-5" />
-              </motion.div>
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden text-slate-400 hover:text-white hover:bg-white/5"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <AnimatePresence mode="wait">
-                {mobileMenuOpen ? (
-                  <motion.div
-                    key="close"
-                    initial={{ rotate: -90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 90, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <X className="h-5 w-5" />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="menu"
-                    initial={{ rotate: 90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: -90, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Menu className="h-5 w-5" />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </Button>
-          </div>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden text-[#737373] hover:text-[#e5e5e5]"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <AnimatePresence mode="wait">
+              {mobileMenuOpen ? (
+                <motion.div
+                  key="close"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <X className="h-5 w-5" />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="menu"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Menu className="h-5 w-5" />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </Button>
         </div>
 
         <AnimatePresence>
@@ -139,13 +89,13 @@ export function Header() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden overflow-hidden"
+              className="md:hidden overflow-hidden pb-4"
             >
-              <nav className="py-4 border-t border-white/5 space-y-1">
+              <nav className="space-y-1 pt-2 border-t border-[#262626]">
                 {navLinks.map((link, i) => (
                   <motion.div
                     key={link.href}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.05 }}
                   >
@@ -153,23 +103,16 @@ export function Header() {
                       to={link.href}
                       onClick={() => setMobileMenuOpen(false)}
                       className={cn(
-                        "block px-4 py-3 text-sm font-medium rounded-lg transition-all",
+                        "block px-3 py-2 text-sm font-mono transition-all",
                         location.pathname === link.href
-                          ? "bg-white/10 text-white"
-                          : "text-slate-400 hover:text-white hover:bg-white/5"
+                          ? "text-[#22c55e] bg-[#171717]"
+                          : "text-[#737373] hover:text-[#e5e5e5]"
                       )}
                     >
                       {link.label}
                     </Link>
                   </motion.div>
                 ))}
-                <Link
-                  to="/admin"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block px-4 py-3 text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 rounded-lg"
-                >
-                  Admin
-                </Link>
               </nav>
             </motion.div>
           )}

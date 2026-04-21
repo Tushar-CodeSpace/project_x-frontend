@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Search, ExternalLink, GitBranch, Code2 } from 'lucide-react';
+// Terminal-inspired project showcase
 import type { Project, ProjectCategory } from '../types';
 import { Input } from '../components/ui/input';
 import { Button } from '../components/ui/button';
 
 const projectCategories: { value: ProjectCategory | 'all'; label: string }[] = [
-  { value: 'all', label: 'All' },
-  { value: 'web-app', label: 'Web Apps' },
-  { value: 'automation', label: 'Automation' },
-  { value: 'tool', label: 'Tools' },
-  { value: 'open-source', label: 'Open Source' },
+  { value: 'all', label: '--all' },
+  { value: 'web-app', label: '--web' },
+  { value: 'automation', label: '--automation' },
+  { value: 'tool', label: '--tools' },
+  { value: 'open-source', label: '--opensource' },
 ];
 
 const mockProjects: Project[] = [
@@ -84,94 +84,91 @@ export function Projects() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 font-[var(--font-display)]">
-            <span className="gradient-text">Projects</span>
-          </h1>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            A showcase of my work spanning web applications, automation tools, and open source contributions.
-          </p>
+        <div className="terminal-window mb-8">
+          <div className="terminal-header">
+            <div className="terminal-dot red" />
+            <div className="terminal-dot yellow" />
+            <div className="terminal-dot green" />
+            <span className="ml-2 text-xs text-[#525252] font-mono">projects.sh</span>
+          </div>
+          <div className="p-4 border-b border-[#262626]">
+            <div className="flex flex-col md:flex-row gap-4">
+              <div className="relative flex-1">
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#525252] font-mono text-sm">$</span>
+                <Input
+                  placeholder="grep projects..."
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  className="pl-8 font-mono text-sm bg-[#0a0a0a] border-[#262626]"
+                />
+              </div>
+              <div className="flex gap-1 flex-wrap">
+                {projectCategories.map((cat) => (
+                  <Button
+                    key={cat.value}
+                    variant={filter === cat.value ? 'default' : 'ghost'}
+                    size="sm"
+                    onClick={() => setFilter(cat.value)}
+                    className={filter === cat.value 
+                      ? 'bg-[#22c55e] text-[#0a0a0a] font-mono text-xs' 
+                      : 'text-[#737373] hover:text-[#e5e5e5] font-mono text-xs'
+                    }
+                  >
+                    {cat.label}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-4 mb-8">
-          <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-500" />
-            <Input
-              placeholder="Search projects..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="pl-10"
-            />
-          </div>
-          <div className="flex gap-2 flex-wrap">
-            {projectCategories.map((cat) => (
-              <Button
-                key={cat.value}
-                variant={filter === cat.value ? 'default' : 'outline'}
-                size="sm"
-                onClick={() => setFilter(cat.value)}
-                className={filter === cat.value ? '' : 'border-white/20 text-slate-400 hover:text-white hover:bg-white/10'}
-              >
-                {cat.label}
-              </Button>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="space-y-4">
           {filteredProjects.map((project, i) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              className="glass-card rounded-2xl overflow-hidden group"
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.05 }}
+              className="terminal-window hover:border-[#22c55e] transition-colors"
             >
-              <div className="aspect-video relative overflow-hidden">
-                <img
-                  src={project.thumbnail}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
-              <div className="p-5">
-                <div className="flex gap-2 mb-3 flex-wrap">
-                  {project.techStack.slice(0, 3).map((tech) => (
-                    <span key={tech} className="text-xs px-2 py-1 rounded-full bg-white/10 text-slate-300">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <h3 className="text-xl font-bold mb-2 text-white group-hover:gradient-text transition-all">
-                  {project.title}
-                </h3>
-                <p className="text-slate-400 text-sm mb-4 line-clamp-2">
-                  {project.description}
-                </p>
-                <div className="flex gap-3">
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-sm text-slate-400 hover:text-white transition-colors"
-                    >
-                      <ExternalLink className="h-4 w-4" />
-                      Live
-                    </a>
-                  )}
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-sm text-slate-400 hover:text-white transition-colors"
-                    >
-                      <GitBranch className="h-4 w-4" />
-                      Code
-                    </a>
-                  )}
+              <div className="p-4">
+                <div className="flex flex-col md:flex-row gap-4">
+                  <div className="w-full md:w-32 h-20 bg-[#171717] flex-shrink-0">
+                    <img 
+                      src={project.thumbnail} 
+                      alt={project.title}
+                      className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-[#525252] font-mono text-xs">[{i + 1}]</span>
+                      <h3 className="font-mono text-sm text-[#e5e5e5]">{project.title}</h3>
+                      {project.featured && (
+                        <span className="text-xs px-2 py-0.5 bg-[#22c55e]/20 text-[#22c55e]">featured</span>
+                      )}
+                    </div>
+                    <p className="text-xs text-[#737373] mb-3">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mb-2">
+                      {project.techStack.slice(0, 4).map((tech) => (
+                        <span key={tech} className="text-xs px-2 py-0.5 bg-[#171717] text-[#737373] font-mono">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex gap-3">
+                      {project.liveUrl && (
+                        <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-[#22c55e] hover:underline">
+                          live demo
+                        </a>
+                      )}
+                      {project.githubUrl && (
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-[#22c55e] hover:underline">
+                          source
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -179,11 +176,14 @@ export function Projects() {
         </div>
 
         {filteredProjects.length === 0 && (
-          <div className="text-center py-16">
-            <Code2 className="h-16 w-16 text-slate-600 mx-auto mb-4" />
-            <p className="text-slate-400 text-lg">No projects found matching your criteria.</p>
+          <div className="terminal-window p-8 text-center">
+            <p className="text-[#737373] font-mono text-sm">No projects found.</p>
           </div>
         )}
+
+        <div className="mt-4 text-[#525252] font-mono text-xs">
+          {filteredProjects.length} project(s) listed
+        </div>
       </motion.div>
     </div>
   );
