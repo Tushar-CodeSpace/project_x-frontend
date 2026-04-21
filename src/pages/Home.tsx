@@ -64,7 +64,7 @@ return (
                 transition={{ delay: 0.5 }}
                 className="text-[#22c55e] mb-6"
               >
-                7+ years in Docker, Node.js, Nginx, VPS & Industrial Automation
+                4+ years in Docker, Node.js, Nginx, VPS & Industrial Automation
               </motion.div>
 
               <div className="mb-4">
