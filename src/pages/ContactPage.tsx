@@ -94,8 +94,8 @@ export function ContactPage() {
             <div className="space-y-2 font-mono text-sm">
               <div className="flex items-center gap-2">
                 <span className="text-[#22c55e]">email:</span>
-                <a href="mailto:tushar.whitecollar@gmail.com" className="text-[#e5e5e5] hover:underline">
-                  tushar.whitecollar@gmail.com
+                <a href="mailto:tushar.codespace@gmail.com" className="text-[#e5e5e5] hover:underline">
+                  tushar.codespace@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2">

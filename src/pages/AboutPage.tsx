@@ -85,7 +85,7 @@ return (
               <a href="https://linkedin.com/in/acharyyatk" target="_blank" rel="noopener noreferrer" className="text-[#22c55e] hover:underline">
                 [linkedin]
               </a>
-              <a href="mailto:tushar.whitecollar@gmail.com" className="text-[#22c55e] hover:underline">
+              <a href="mailto:tushar.codespace@gmail.com" className="text-[#22c55e] hover:underline">
                 [email]
               </a>
             </div>
