@@ -105,13 +105,15 @@ return (
               >
                 <Link
                   to="/projects"
-                  className="px-4 py-2 bg-[#22c55e] text-white font-mono text-sm hover:bg-[#16a34a] transition-colors"
+                  style={{ backgroundColor: '#22c55e', color: '#ffffff', fontFamily: 'monospace' }}
+                  className="px-4 py-2 text-sm hover:bg-[#16a34a] transition-colors"
                 >
                   ./view_projects.sh
                 </Link>
                 <Link
                   to="/contact"
-                  className="px-4 py-2 border border-[#22c55e] text-[#22c55e] font-mono text-sm hover:bg-[#22c55e] hover:text-[#0a0a0a] transition-colors"
+                  style={{ border: '1px solid #22c55e', color: '#22c55e', fontFamily: 'monospace' }}
+                  className="px-4 py-2 text-sm hover:bg-[#22c55e] hover:text-white transition-colors"
                 >
                   ./contact.sh
                 </Link>
