@@ -113,7 +113,7 @@ return (
                 <Link
                   to="/contact"
                   style={{ border: '1px solid #22c55e', color: '#22c55e', fontFamily: 'monospace' }}
-                  className="px-4 py-2 text-sm hover:bg-[#22c55e] hover:text-white transition-colors"
+                  className="px-4 py-2 text-sm hover:bg-[#22c55e] hover:text-black transition-colors"
                 >
                   ./contact.sh
                 </Link>
@@ -244,7 +244,8 @@ return (
               </p>
               <Link
                 to="/contact"
-                className="inline-block px-4 py-2 bg-c22c55e text-cffffff font-mono text-sm hover:bg-c16a34a transition-colors"
+                style={{ backgroundColor: '#22c55e', color: '#ffffff', fontFamily: 'monospace' }}
+                className="inline-block px-4 py-2 text-sm hover:bg-[#16a34a] transition-colors"
               >
                 ./run_contact.sh
               </Link>
