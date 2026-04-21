@@ -112,8 +112,7 @@ return (
                 </Link>
                 <Link
                   to="/contact"
-                  style={{ border: '1px solid #22c55e', color: '#22c55e', fontFamily: 'monospace' }}
-                  className="px-4 py-2 text-sm hover:bg-[#22c55e] hover:text-black transition-colors"
+                  className="px-4 py-2 text-sm border border-c22c55e text-c22c55e font-mono hover-green-btn transition-colors"
                 >
                   ./contact.sh
                 </Link>
