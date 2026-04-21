@@ -36,9 +36,11 @@ export function ContactPage() {
         transition={{ duration: 0.5 }}
         className="max-w-2xl mx-auto"
       >
-        <h1 className="text-4xl font-bold mb-4 text-center">Contact Us</h1>
-        <p className="text-slate-600 dark:text-slate-400 text-center mb-8">
-          Have a question or suggestion? We'd love to hear from you.
+        <h1 className="text-4xl font-bold mb-4 text-center font-[var(--font-display)]">
+          <span className="gradient-text">Get In Touch</span>
+        </h1>
+        <p className="text-slate-400 text-center mb-8">
+          Have a project in mind? Let's discuss how I can help bring your ideas to life.
         </p>
 
         <Card className="p-6">

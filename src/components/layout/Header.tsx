@@ -8,11 +8,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/category/docker', label: 'Docker' },
-  { href: '/category/database', label: 'Database' },
-  { href: '/category/redis', label: 'Redis' },
-  { href: '/category/programming', label: 'Programming' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/blog', label: 'Blog' },
   { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export function Header() {
@@ -33,7 +32,7 @@ export function Header() {
               </div>
             </div>
             <span className="text-xl font-bold font-[var(--font-display)] gradient-text">
-              TechBlog
+              DevFolio
             </span>
           </Link>
 
@@ -68,7 +67,7 @@ export function Header() {
                 size="sm" 
                 className="hidden sm:flex text-slate-400 hover:text-white hover:bg-white/5"
               >
-                Admin
+                Dashboard
               </Button>
             </Link>
             <Button

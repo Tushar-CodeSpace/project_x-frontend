@@ -7,6 +7,7 @@ import { CategoryPage } from './pages/CategoryPage'
 import { SearchPage } from './pages/SearchPage'
 import { AboutPage } from './pages/AboutPage'
 import { ContactPage } from './pages/ContactPage'
+import { Projects } from './pages/Projects'
 import { AdminDashboard } from './pages/admin/AdminDashboard'
 import { AdminPosts } from './pages/admin/AdminPosts'
 
@@ -15,6 +16,8 @@ function App() {
     <Routes>
       <Route element={<Layout><Outlet /></Layout>}>
         <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/blog" element={<CategoryPage />} />
         <Route path="/post/:slug" element={<BlogPost />} />
         <Route path="/category/:category" element={<CategoryPage />} />
         <Route path="/search" element={<SearchPage />} />
